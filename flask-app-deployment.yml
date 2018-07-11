@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app-deployment  
+  labels:
+      app: flask-app
+      role: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: flask-app-pod
+      app: flask-app
+      role: frontend
+  template:
+    metadata:
+      name: flask-app-pod
+      labels:
+        name: flask-app-pod
+        app: flask-app
+        role: frontend
+    spec:
+      containers:
+      - name: flask-demo-app
+        image: mozorbo/python-flask-demo
+        ports:
+        - containerPort: 5000
