@@ -6,7 +6,7 @@ app = Flask(__name__)
 quotes = []
 
 
-def loadQuotes():
+def load_quotes():
     file = open("quotes.txt", "r")
     for line in file:
         line = line.rstrip()
@@ -23,5 +23,5 @@ def get_random_quote():
 
 
 if __name__ == "__main__":
-    loadQuotes()
+    load_quotes()
     app.run(host='0.0.0.0')
