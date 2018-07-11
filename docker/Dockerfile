@@ -11,4 +11,4 @@ RUN pip install flask
 EXPOSE 5000
 
 COPY . /opt/source-code/
-CMD python /opt/source-code/app.py
+ENTRYPOINT python /opt/source-code/app.py
