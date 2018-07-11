@@ -10,5 +10,5 @@ RUN pip install flask
 
 EXPOSE 5000
 
-COPY . /opt/source-code/
-ENTRYPOINT python /opt/source-code/app.py
+COPY . / 
+ENTRYPOINT python app.py
